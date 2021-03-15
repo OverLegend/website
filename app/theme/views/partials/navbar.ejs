@@ -1,0 +1,31 @@
+<div class="navbar top">
+  <div class="logo">
+    <img src="/img/favicon.svg" alt="favicon.svg">
+  </div>
+  <div class="links">
+    <a href="/home">Home</a>
+    <a href="/modalita">Modalità</a>
+    <a href="/regole">Regolamento</a>
+    <a href="/staff">Staff</a>
+    <a href="/punizioni/bans">Punizioni</a>
+  </div>
+  <div class="left" id="nav-left-content">
+    <p>mc.overlegend.it</p>
+    <% if(locals.isLogged) { %>
+    <img onclick="toggleMenu();" src="https://cdn.discordapp.com/avatars/<%= locals.discordId %>/<%= locals.avatar %>.png?size=128">
+    <% } else { %>
+    <a href="/login">ACCEDI</a>
+    <% } %>
+  </div>
+</div>
+
+<% if(locals.isLogged) { %>
+<div class="log-menu">
+  <ul>
+    <li><a href=""></a></li>
+    <li><a href=""></a></li>
+    <li><a href=""></a></li>
+    <li><a id="diff" href="/logout">Logout</a></li>
+  </ul>
+</div>
+<% } %>

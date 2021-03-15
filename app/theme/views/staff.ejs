@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <%- include("partials/head", {displayName: "Staff", id: "staff"}); %>
+  </head>
+  <body onscroll="checkScroll(-1);">
+    <div class="container">
+      <%- include("partials/navbar"); %>
+      <%- include("partials/discordFloating"); %>
+      <div onclick="window.open('https://discord.gg/hQu8rKBwsn','_blank');" class="apply">
+        <p>CANDIDATI</p>
+      </div>
+      <div class="page">
+        <div class="divider"></div>
+        <div class="section">
+          <div class="description">
+            <img src="/img/wand.webp" alt="wand.webp">
+            <h3>Il nostro staff</h3>
+            <p>Questa è la lista aggiornata del nostro staff. Se qualcuno si presenta come staffer ma non è presente qui, contatta al più presto un amministratore ed evita di fornire dati sensibili, lo staff non ti chiederà mai la tua password o il tuo ip.</p>
+          </div>
+          <div class="content">
+            <div class="staff-row">
+              <div class="title">
+                <h2>FONDATORI</h2>
+                <p>I fondatori gestiscono la parte social e pubblica del server.<br>I fondatori danno l'approvazione o meno a nuove modalità o meccaniche di gioco.</p>
+              </div>
+              <div class="cells" id="founder"></div>
+            </div>
+            <div class="staff-row">
+              <div class="title">
+                <h2>AMMINISTRATORI</h2>
+                <p>Hanno diversi compiti, dallo gestire lo staff (gestendo le candidature o le aree di competenza degli altri staffer) al configurare/sviluppare nuove modalità o aggiornare quelle esistenti.</p>
+              </div>
+              <div class="cells" id="admin"></div>
+            </div>
+            <div class="staff-row">
+              <div class="title">
+                <h2>MODERATORI</h2>
+                <p>Hanno il compito di controllare la chat e gli utenti, assicurandosi che nessuno utilizzi meccaniche a svantaggio degli altri player.</p>
+              </div>
+              <div class="cells" id="moderator"></div>
+            </div>
+            <div class="staff-row">
+              <div class="title">
+                <h2>AIUTANTI</h2>
+                <p>Sono l'anello di congiunzioni sta i player e lo staff.<br>Sono disponibili a rispondere ad ogni tuo dubbio o esigenza, magari contattando un superiore se necessario.</p>
+              </div>
+              <div class="cells" id="helper"></div>
+            </div>
+            <div class="staff-row">
+              <div class="title">
+                <h2>COSTRUTTORI</h2>
+                <p>Rendono il network fruibile, costruendo i vari spawn e warp delle modalità e del network.</p>
+              </div>
+              <div class="cells" id="builder"></div>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+      </div>
+      <%- include("partials/footer"); %>
+    </div>
+
+    <script src="/script/utils.js"></script>
+    <script src="/script/getStaff.js"></script>
+    
+    <script>
+      (function() {
+        goTop();
+        document.body.addEventListener("scroll", checkScroll(-1));
+        document.querySelector(".navbar").classList.toggle("top");
+        getStaff();
+      }());
+
+      checkScroll(-1);
+      
+      function showDs() {
+        document.querySelector(".floating-ds").classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>

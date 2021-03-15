@@ -1,0 +1,177 @@
+$background: #f6df99;
+
+html {
+  scroll-behavior: smooth;
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: whitesmoke;
+    position: relative;
+    .container {
+      width: 100%;
+      @import "../../components/navbar";
+      @import "../../components/_floatingDiscord.scss";
+      @import "../../components/footer";
+
+      .apply {
+        display: flex;
+        position: fixed;
+        bottom: 25px;
+        left: 25px;
+        background: #2e2e2e;
+        padding: 0.4em 0.8em;
+        cursor: pointer;
+        border-radius: 35px;
+        z-index: 90;
+        transition: opacity 0.2s;
+
+        &:hover {
+          transition: 0.2s;
+          opacity: 0.8;
+        }
+
+        p {
+          color: white;
+          font-family: "Poppins";
+          font-weight: bold;
+          font-size: 18px;
+          margin: auto;
+        }
+      }
+
+      .page {
+        background: $background;
+        z-index: 50;
+        height: auto;
+        min-height: 80vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        .section {
+          margin: auto;
+          position: relative;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          height: auto;
+          padding: 3em 0 4em 0;
+          z-index: 30;
+          background-color: white;
+          box-shadow: 0 0 8px 1px rgba(10, 10, 10, 0.2);
+          .description {
+            margin: 2em auto 4em auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            img {
+              width: 110px;
+              margin: 2.5em auto;
+            }
+            h3 {
+              margin: 0 auto;
+              font-family: "Montserrat";
+              font-size: 30px;
+              font-weight: bold;
+              color: white;
+              position: relative;
+              z-index: 51;
+              &::before {
+                z-index: -1;
+                content: "";
+                background-color: #2e2e2e;
+                position: absolute;
+                width: 140%;
+                left: -20%;
+                height: 120%;
+                top: -10%;
+                transform: skewX(-20deg);
+                border-top-right-radius: 15px;
+                border-bottom-left-radius: 15px;
+              }
+            }
+            p {
+              max-width: 750px;
+              text-align: center;
+              font-family: "Montserrat";
+              font-size: 17px;
+              margin: 2em auto;
+              color: #2e2e2eb4;
+            }
+          }
+          .content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .staff-row {
+              display: flex;
+              flex-direction: column;
+              width: 75%;
+              margin: 2em auto;
+              .title {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                h2 {
+                  margin: 0 auto;
+                  font-weight: bold;
+                  font-size: 28px;
+                  font-family: "Poppins";
+                }
+                p {
+                  color: #2e2e2eb4;
+                  text-align: center;
+                  margin: 0.75em auto;
+                  max-width: 75%;
+                  font-family: "Montserrat";
+                }
+              }
+              .cells {
+                margin: 2.5em auto;
+                display: flex;
+                flex-wrap: wrap;
+                max-width: 1000px;
+                justify-content: center;
+                .wrapper {
+                  padding: 2em;
+                  margin: auto;
+                  div {
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #2e2e2e;
+                    margin: 0 1.5em;
+                    padding: 3em 2.5em;
+                    border-radius: 8px;
+                    box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3);
+
+                    img {
+                      width: 110px;
+                      margin: 0 auto auto auto;
+                    }
+                    p {
+                      color: white;
+                      font-size: 18px;
+                      font-family: "Poppins";
+                      margin: 1.5em auto 0 auto;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .divider {
+          position: relative;
+          width: 100%;
+          height: 15vh;
+          background: $background;
+          z-index: 29;
+          &:first-child {
+            height: 20vh;
+          }
+        }
+      }
+    }
+  }
+}

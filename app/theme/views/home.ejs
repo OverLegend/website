@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <%- include("partials/head", {displayName: "Home", id: "home"}); %>
+  </head>
+  <body onscroll="checkScroll(500);">
+    <input id="serverip" type="text" value="mc.overlegend.it" >
+    <div class="container">
+      <%- include("partials/navbar"); %>
+      <div class="content">
+        <div class="firstContent">
+          <div class="logo">
+            <img src="/img/logo.webp" alt="logo.webp">
+          </div>
+          <div class="lore">
+            <h2>Benvenuto su OverLegend!</h2>
+            <div class="buttons">
+              <button id="ip" onclick="copyip()">Copia IP</button>
+            </div>
+          </div>
+          <div class="cta" onclick="scrollInto('.page', -120)"></div>
+        </div>
+        <%- include("partials/discordFloating"); %>
+        <div class="page">
+          <div class="section">
+            <div class="description">
+              <h3>La nostra filosofia</h3>
+              <p>È ciò che ci muove ogni giorno per portare sviluppo ed innovazione all'interno del network, ed è ciò che andrai poi a provare in game.</p>
+            </div>
+            <div class="cnt">
+              <div class="info">
+                <p>Per noi dello staff di OverLegend, è di vitale importanza mantenere stabile e fluida l'esperienza di gioco, con latenze minime e periodi di manutenzione contenuti.<br><br>Ci impegnamo anche ad offrire un'esperienza di gioco adatta a tutte le età, con modalità principalmente fantasy e con un'attenzione particolare alla pulizia della chat.<br><br>Fondamentale è il mantenere il network il più possibile libero da cheater, grazie allo staff e ai meccanismi di rilevamento automatici.</p>
+              </div>
+              <div class="wallpaper">
+                <img src="/img/cornice.jpg" alt="wallpaper.webp">
+              </div>
+            </div>
+          </div>
+          <div class="divider"></div>
+
+          <div class="section">
+            <div class="description">
+              <h3>I nostri numeri</h3>
+              <p>Noi di OverLegend crediamo nella trasparenza più assoluta, infatti vogliamo dare un'idea ai player dei nostri numeri all'interno del network.</p>
+            </div>
+            <div class="cnt row">
+              <div class="stat">
+                <h3><span id="mccount"></span></h3>
+                <p>Utenti online ora su minecraft.</p>
+              </div>
+              <div class="stat">
+                <h3><span id="dscount"></span></h3>
+                <p>Utenti online ora su discord.</p>
+              </div>
+              <div class="stat">
+                <h3><span id="igcount"></span></h3>
+                <p>Follower su instagram.</p>
+              </div>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="section">
+            <div class="description">
+              <h3>Hall of fame</h3>
+              <p>Qui vengono riportate le classifiche di vari eventi e contest. Attualmente è presente la classifica dei migliori parkourer. Puoi sfidarli tramite la modalità parkour all'hub.</p>
+            </div>
+            <div class="cnt" id="park_top">
+            </div>
+            <div class="stats">
+              <div id="stat1"></div>
+              <div id="stat2"></div>
+            </div>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <%- include("partials/footer"); %>
+    </div>
+
+    <script src="/script/utils.js"></script>
+    <script src="/script/topParkour.js"></script>
+    <script>
+
+      (function() {
+        document.body.addEventListener("scroll", checkScroll(500));
+        countPlayers("#dscount","#mccount","#igcount");
+        goTop();
+        parkourTop();
+        checkScroll(500);
+      }());
+
+      function copyip() {
+        document.getElementById("serverip").select(), document.execCommand("copy");
+        document.getElementById("ip").innerText = "IP Copiato";
+        setTimeout(() => {
+          document.getElementById("ip").innerText = "Copia IP";
+        }, (2000));
+      }
+      
+      function showDs() {
+        document.querySelector(".floating-ds").classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>

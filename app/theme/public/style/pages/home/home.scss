@@ -1,0 +1,300 @@
+$background: #f6df99;
+
+html {
+  scroll-behavior: smooth;
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: whitesmoke;
+    position: relative;
+
+    #serverip {
+      cursor: context-menu;
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .container {
+      width: 100%;
+      @import "../../components/navbar";
+      .content {
+        width: 100%;
+        height: auto;
+        height: auto;
+        position: relative;
+        .firstContent {
+          z-index: 25;
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          background-image: url("../../../img/wallpaper.webp");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          position: relative;
+
+          &::before {
+            position: absolute;
+            content: "";
+            z-index: 26;
+            background-color: $background;
+            width: 100%;
+            height: 1000px;
+            top: calc(100% - 60px);
+            transform: skewY(3deg);
+          }
+
+          &::after {
+            position: absolute;
+            content: "";
+            z-index: 26;
+            background-color: $background;
+            width: 100%;
+            height: 1000px;
+            top: calc(100% - 60px);
+            transform: skewY(-3deg);
+          }
+
+          .cta {
+            transition: 0.2s;
+            position: absolute;
+            width: 2.5em;
+            height: 2.5em;
+            background-color: white;
+            border-radius: 100%;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            bottom: 8em;
+            z-index: 51;
+            animation: 1.5s pulse infinite linear;
+            cursor: pointer;
+            opacity: 1;
+            background-image: url("../../../img/arrowdown.webp");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 55%;
+
+            &:hover {
+              transition: 0.2s;
+              opacity: 0.8;
+            }
+          }
+
+          .logo {
+            display: flex;
+            img {
+              margin: 15% auto auto auto;
+              width: 220px;
+            }
+          }
+          .lore {
+            display: flex;
+            flex-direction: column;
+            h2 {
+              font-family: "Montserrat";
+              font-weight: bold;
+              text-shadow: 3px 3px rgba(10, 10, 10, 0.2);
+              font-size: 40px;
+              color: white;
+              margin: 0.5em auto;
+            }
+            .buttons {
+              width: 100%;
+              display: flex;
+              button {
+                position: relative;
+                margin: 1em auto;
+                font-family: "Montserrat";
+                border-radius: 6px;
+                transition: 0.4s;
+                box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.2);
+                font-weight: bold;
+                font-size: 16px;
+                color: white;
+                background: rgba(255, 255, 255, 0.1);
+                border: 3px solid white;
+                padding: 0.4em 0.8em;
+                cursor: pointer;
+                &:hover {
+                  transition: 0.4s;
+                  box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.5);
+                  background: white;
+                  color: #2e2e2e;
+                }
+              }
+            }
+          }
+        }
+        @import "../../components/_floatingDiscord.scss";
+        .page {
+          background: $background;
+          z-index: 50;
+          height: auto;
+          position: relative;
+
+          .section {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            padding: 3em 0 4em 0;
+            z-index: 30;
+            background-color: white;
+            box-shadow: 0 0 8px 1px rgba(10, 10, 10, 0.2);
+
+            .description {
+              margin: 2em auto;
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              h3 {
+                margin: 0 auto;
+                font-family: "Montserrat";
+                font-size: 30px;
+                font-weight: bold;
+                color: white;
+                position: relative;
+                z-index: 51;
+                &::before {
+                  z-index: -1;
+                  content: "";
+                  background-color: #2e2e2e;
+                  position: absolute;
+                  width: 140%;
+                  left: -20%;
+                  height: 120%;
+                  top: -10%;
+                  transform: skewX(-20deg);
+                  border-top-right-radius: 15px;
+                  border-bottom-left-radius: 15px;
+                }
+              }
+              p {
+                max-width: 750px;
+                text-align: center;
+                font-family: "Montserrat";
+                font-size: 17px;
+                margin: 2em auto;
+                color: #2e2e2eb4;
+              }
+            }
+            .cnt {
+              display: flex;
+
+              .info {
+                display: flex;
+                flex: 1;
+                p {
+                  text-align: left;
+                  margin: auto;
+                  font-family: "Poppins";
+                  color: #2e2e2eb4;
+                  font-size: 16px;
+                  max-width: 70%;
+                }
+              }
+
+              .wallpaper {
+                padding: 4em 0;
+                display: flex;
+                flex: 1;
+                img {
+                  box-shadow: 0 0 6px 1px rgba(10, 10, 10, 0.3);
+                  transition: 0.3s;
+                  transform: rotate(10deg);
+                  width: 400px;
+                  margin: auto;
+                  &:hover {
+                    transform: rotate(0deg);
+                    transition: 0.3s;
+                  }
+                }
+              }
+
+              .stat {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                h3 {
+                  font-weight: bold;
+                  margin: 0.25em auto;
+                  font-size: 28px;
+                  color: #2e2e2e;
+                  font-family: "Poppins";
+                }
+                p {
+                  text-align: center;
+                  margin: 0.25em auto;
+                  font-family: "Montserrat";
+                  font-size: 17px;
+                  color: #2e2e2e;
+                }
+              }
+            }
+            #park_top {
+              display: flex;
+              width: 50%;
+              margin: auto;
+              div {
+                margin: auto;
+                &:first-child {
+                  margin-left: auto;
+                }
+                &:last-child {
+                  margin-right: auto;
+                }
+              }
+            }
+            .stats {
+              display: flex;
+              width: 60%;
+              margin: auto;
+              #stat1,
+              #stat2 {
+                margin-top: 2em;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                p {
+                  margin: 1em auto;
+                  font-family: "Poppins";
+                }
+              }
+            }
+            .row {
+              flex-direction: row;
+              width: 60%;
+              margin: 0 auto;
+            }
+          }
+          .divider {
+            position: relative;
+            width: 100%;
+            height: 15vh;
+            background: $background;
+            z-index: 29;
+          }
+        }
+      }
+      @import "../../components/footer";
+    }
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 0 0 12px 1px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 24px 1px rgba(255, 255, 255, 0);
+  }
+}

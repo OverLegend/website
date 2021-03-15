@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <%- include("partials/head", {displayName: "Punizioni", id: "punizioni"}); %>
+  </head>
+  <body onscroll="checkScroll(-1);">
+    <div class="container">
+      <%- include("partials/navbar"); %>
+      <%- include("partials/discordFloating"); %>
+      <div class="page">
+        <div class="divider"></div>
+        <div class="section">
+          <div class="description">
+            <img src="/img/hammer.webp" alt="hammer.webp">
+            <h3>Lista delle sanzioni</h3>
+            <p>Qui è possibile consultare la lista di alcune punizioni inflitte ai player. Se ritieni che una di queste sia infondata, apri un ticket all'interno del nostro server discord, o inviaci una mail specificando: data, nome utente, lo staffer in questione e la motivazione.</p>
+          </div>
+          <div class="content">
+            <div class="controls">
+              <button onclick="window.location.href='/punizioni/bans';" id="bans">Bans</button>
+              <button onclick="window.location.href='/punizioni/mutes';" id="mutes">Mutes</button>
+              <button onclick="window.location.href='/punizioni/warns';" id="warns">Warnings</button>
+            </div>
+            <table id="list">
+            </table>
+            <div class="select">
+              <button id="previous" onclick="prevPage()">Precedente</button>
+              <button id="next" onclick="nextPage()">Prossima</button>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+      </div>
+      <%- include("partials/footer"); %>
+    </div>
+
+    <script src="/script/utils.js"></script>
+    <script src="/script/checkInfractions.js"></script>
+    
+    <script>
+      (function() {
+        goTop();
+        document.body.addEventListener("scroll", checkScroll(-1));
+        document.querySelector(".navbar").classList.toggle("top");
+        check();
+      }());
+
+      checkScroll(-1);
+      
+      function showDs() {
+        document.querySelector(".floating-ds").classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <%- include("partials/head", {displayName: "Modalità", id: "modalita"}); %>
+  </head>
+  <body onscroll="checkScroll(-1);">
+    <div class="container">
+      <%- include("partials/navbar"); %>
+      <%- include("partials/discordFloating"); %>
+      <div class="page">
+        <div class="divider"></div>
+        <div class="section">
+          <div class="description">
+            <img src="/img/globe.webp" alt="rules.webp">
+            <h3>Le nostre modalità</h3>
+            <p></p>
+          </div>
+          <div class="content">
+            <div class="mod">
+              <div class="lore">
+                <h4 id="title">SkyBlock</h4>
+                <p id="version">1.16.4</p>
+                <p id="lore">La nostra skyblock è incentrata sul farming e sull'utilizzo dei mob spawner, grazie anche alla possibilità di catturare i mob e di inserirli all'interno degli spawner, anche essi livellabili ed acquistabili.</p>
+              </div>
+              <div class="image">
+                <img src="/img/modalities/wallpaper_skyblock.webp" alt="wallpaper_skyblock.webp">
+              </div>
+            </div>
+            <div class="mod left">
+              <div class="lore">
+                <h4 id="title">Pixelmon</h4>
+                <p id="version">1.12.2</p>
+                <p id="lore">Modalità moddata che utilizza la mod <a href="https://reforged.gg/" target="_blank">Pixelmon Reforged</a>, cercando però di mantenere il più possibile le meccaniche di una vanilla classica.</p>
+              </div> 
+              <div class="image">
+                <img src="/img/modalities/wallpaper_pixelmon.webp" alt="wallpaper_pixelmon.webp">
+              </div>
+            </div>
+            <div class="mod">
+              <div class="lore">
+                <h4 id="title">Bedwars</h4>
+                <p id="version">1.8.x - 1.16.x</p>
+                <p id="lore">Minigame che cerca di coadiuvare più modalità, dalle skywars alle classiche bedwars fino alle potwars. Sono inoltre pubbliche le classifiche di varie statistiche che ci permettono di organizzare eventi e di premiare i top player all'interno del network.</p>
+              </div>
+              <div class="image">
+                <img src="/img/modalities/wallpaper_bedwars.webp" alt="wallpaper_bedwars.webp">
+              </div>
+            </div>
+            <div class="mod left">
+              <div class="lore">
+                <h4 id="title">Vanilla</h4>
+                <p id="version">1.16.4</p>
+                <p id="lore">Esperienza vanilla con poche e ben bilanciate meccaniche custom per aggevolare i player che vogliono preservare le loro costruzioni, come la presenza di un sistema di claim, e una home disponibile. Nulla di più, nulla di meno.</p>
+              </div>
+              <div class="image">
+                <img src="/img/modalities/wallpaper_vanilla.webp" alt="wallpaper_vanilla.webp">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="divider">
+        </div>
+      </div>
+      <%- include("partials/footer"); %>
+    </div>
+
+    <script src="/script/utils.js"></script>
+    
+    <script>
+      (function() {
+        goTop();
+        document.body.addEventListener("scroll", checkScroll(-1));
+        document.querySelector(".navbar").classList.toggle("top");
+      }());
+
+      checkScroll(-1);
+      
+      function showDs() {
+        document.querySelector(".floating-ds").classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>

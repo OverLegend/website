@@ -1,0 +1,239 @@
+$background: #f6df99;
+
+html {
+  scroll-behavior: smooth;
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: whitesmoke;
+    position: relative;
+    .container {
+      width: 100%;
+      @import "../../components/navbar";
+      @import "../../components/_floatingDiscord.scss";
+      @import "../../components/footer";
+      .page {
+        background: $background;
+        z-index: 50;
+        height: auto;
+        min-height: 80vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        .section {
+          margin: auto;
+          position: relative;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          height: auto;
+          padding: 3em 0 4em 0;
+          z-index: 30;
+          background-color: white;
+          box-shadow: 0 0 8px 1px rgba(10, 10, 10, 0.2);
+          .description {
+            margin: 2em auto 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            img {
+              width: 150px;
+              margin: 2.5em auto;
+            }
+            h3 {
+              margin: 0 auto;
+              font-family: "Montserrat";
+              font-size: 30px;
+              font-weight: bold;
+              color: white;
+              position: relative;
+              z-index: 51;
+              &::before {
+                z-index: -1;
+                content: "";
+                background-color: #2e2e2e;
+                position: absolute;
+                width: 140%;
+                left: -20%;
+                height: 120%;
+                top: -10%;
+                transform: skewX(-20deg);
+                border-top-right-radius: 15px;
+                border-bottom-left-radius: 15px;
+              }
+            }
+            p {
+              max-width: 750px;
+              text-align: center;
+              font-family: "Montserrat";
+              font-size: 17px;
+              margin: 2em auto;
+              color: #2e2e2eb4;
+            }
+          }
+          .content {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+
+            .index {
+              display: flex;
+              flex-direction: column;
+              width: 75%;
+              margin: 2em auto;
+              .title {
+                display: flex;
+                width: 100%;
+                h3 {
+                  margin: 0 auto 2em auto;
+                  font-family: "Poppins";
+                  color: #2e2e2e;
+                  font-size: 20px;
+                  font-weight: bold;
+                }
+              }
+              .links {
+                display: flex;
+                margin: 0 auto;
+                width: 50%;
+
+                .link {
+                  flex: 1;
+                  display: flex;
+                  button {
+                    cursor: pointer;
+                    font-size: 17px;
+                    border: none;
+                    background-color: transparent;
+                    color: #2e2e2e;
+                    font-family: "Poppins";
+                    margin: auto;
+                    position: relative;
+                    padding: 0.2em 0.75em;
+
+                    &:hover {
+                      transition: 0.2s;
+                      color: white;
+                    }
+
+                    &::before {
+                      content: "";
+                      transition: 0.2s;
+                      position: absolute;
+                      background: #2e2e2e;
+                      height: 100%;
+                      width: 0.5em;
+                      left: 0;
+                      top: 0;
+                      z-index: -1;
+                    }
+
+                    &:hover::before {
+                      content: "";
+                      transition: 0.2s;
+                      position: absolute;
+                      background: #2e2e2e;
+                      height: 100%;
+                      width: 100%;
+                      left: 0;
+                      top: 0;
+                      z-index: -1;
+                    }
+                  }
+                }
+              }
+            }
+
+            .rules {
+              margin: 2em 1em;
+              .rule {
+                h4 {
+                  font-size: 22px;
+                  text-decoration: none;
+                  color: #2e2e2e;
+                  font-family: "Poppins";
+                  margin: 1em auto auto 0;
+                  position: relative;
+                  padding: 0.2em 25px;
+                }
+
+                button {
+                  background: none;
+                  margin: 0 0 0 25px;
+                  padding: 0;
+                  border: none;
+                  color: #2e2e2e;
+                  font-family: "Poppins";
+                  cursor: pointer;
+                  transition: 0.1s;
+                  &:hover {
+                    opacity: 0.75;
+                    transition: 0.1s;
+                  }
+                }
+
+                #on {
+                  color: #2e2e2eb4;
+                  font-family: "Poppins";
+                  margin: auto auto auto 0;
+                  position: relative;
+                  padding: 1em 25px 0.2em 25px;
+                }
+
+                #tw {
+                  color: #2e2e2eb4;
+                  font-family: "Poppins";
+                  margin: auto auto auto 0;
+                  position: relative;
+                  padding: 0.4em 25px 1em 25px;
+                }
+
+                ul {
+                  margin-left: 0;
+                  padding-left: 25px;
+                  list-style-type: none;
+
+                  a {
+                    color: #8c9eff;
+                    text-decoration: none;
+                    transition: 0.1s;
+                    &:hover {
+                      text-decoration: underline;
+                      transition: 0.1s;
+                      opacity: 0.9;
+                    }
+                  }
+
+                  li {
+                    text-align: left;
+                    margin-bottom: 1em;
+                    font-family: "Poppins";
+                  }
+                }
+
+                p,
+                li {
+                  max-width: 60%;
+                }
+              }
+            }
+          }
+        }
+
+        .divider {
+          position: relative;
+          width: 100%;
+          height: 15vh;
+          background: $background;
+          z-index: 29;
+          &:first-child {
+            height: 20vh;
+          }
+        }
+      }
+    }
+  }
+}
