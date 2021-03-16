@@ -147,7 +147,8 @@ html body .container .log-menu {
   background-color: white;
   z-index: 101;
   top: 100px;
-  height: 0px;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
   right: 1em;
   border-radius: 5px;
   -webkit-box-shadow: none;
@@ -161,16 +162,23 @@ html body .container .log-menu {
 }
 
 html body .container .log-menu ul {
-  margin: 0.75em auto auto 0.75em;
   list-style-type: none;
+  width: 100%;
+  margin: 0;
   padding: 0;
 }
 
 html body .container .log-menu ul li {
+  margin-left: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   font-family: "Montserrat";
+  padding: 0.65em 1em;
+  cursor: pointer;
 }
 
-html body .container .log-menu ul li a {
+html body .container .log-menu ul li p {
+  margin: 0;
   color: #2e2e2e;
   text-decoration: none;
 }
@@ -179,12 +187,19 @@ html body .container .log-menu ul li #diff {
   color: red;
 }
 
+html body .container .log-menu ul li:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background-color: #e4e4e4;
+}
+
 html body .container .visible {
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  height: 100px;
-  -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3);
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.3));
 }
 
 html body .container .top {
@@ -197,9 +212,9 @@ html body .container .top {
 }
 
 html body .container .top .left {
-  border-radius: 3px;
-  -webkit-box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  -webkit-filter: drop-shadow(0 6px 1px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 6px 1px rgba(0, 0, 0, 0.15));
 }
 
 html body .container .top .links a {

@@ -103,7 +103,7 @@ $linkSize: 19px;
   background-color: white;
   z-index: 101;
   top: 100px;
-  height: 0px;
+  transform: scaleY(0);
   right: 1em;
   border-radius: 5px;
   box-shadow: none;
@@ -112,27 +112,37 @@ $linkSize: 19px;
   display: flex;
 
   ul {
-    margin: 0.75em auto auto 0.75em;
     list-style-type: none;
+    width: 100%;
+    margin: 0;
     padding: 0;
     li {
+      margin-left: 0;
+      transition: 0.2s;
       font-family: "Montserrat";
-      a {
+      padding: 0.65em 1em;
+      cursor: pointer;
+      p {
+        margin: 0;
         color: #2e2e2e;
         text-decoration: none;
       }
       #diff {
         color: red;
       }
+
+      &:hover {
+        transition: 0.2s;
+        background-color: rgb(228, 228, 228);
+      }
     }
   }
-
 }
 
 .visible {
   transition: 0.3s;
-  height: 100px;
-  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3);
+  transform: scaleY(1);
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.3));
 }
 
 
@@ -144,8 +154,8 @@ $linkSize: 19px;
   box-shadow: none;
   height: 100px;
   .left {
-    border-radius: 3px;
-    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    filter: drop-shadow(0 6px 1px rgba(0, 0, 0, 0.15));
   }
   .links a {
     transition: 0.2s;

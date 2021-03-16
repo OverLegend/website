@@ -22,10 +22,9 @@
 <% if(locals.isLogged) { %>
 <div class="log-menu">
   <ul>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a id="diff" href="/logout">Logout</a></li>
+    <li onclick="redirectUrl('/profilo');"><p>Profilo</p></li>
+    <li onclick="redirectUrl('https://store.overlegend.it');"><p>Store</p></li>
+    <li onclick="redirectUrl('/logout');"><p id="diff">Logout</p></li>
   </ul>
 </div>
 <% } %>

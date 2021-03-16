@@ -16,6 +16,10 @@ function checkScroll(x) {
   }
 }
 
+function redirectUrl(url) {
+  window.location.href = url;
+}
+
 function countPlayers(a,b,c) {
   fetch("https://ptb.discord.com/api/guilds/706103159835197460/widget.json", {
     mode: "cors"
@@ -44,7 +48,7 @@ function countPlayers(a,b,c) {
     }
   });
 
-  document.querySelector(c).innerText = "1500+";
+  document.querySelector(c).innerText = "1450+";
 }
 
 function toggleMenu() {

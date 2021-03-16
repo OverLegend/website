@@ -154,7 +154,8 @@ html body .container .log-menu {
   background-color: white;
   z-index: 101;
   top: 100px;
-  height: 0px;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
   right: 1em;
   border-radius: 5px;
   -webkit-box-shadow: none;
@@ -168,16 +169,23 @@ html body .container .log-menu {
 }
 
 html body .container .log-menu ul {
-  margin: 0.75em auto auto 0.75em;
   list-style-type: none;
+  width: 100%;
+  margin: 0;
   padding: 0;
 }
 
 html body .container .log-menu ul li {
+  margin-left: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   font-family: "Montserrat";
+  padding: 0.65em 1em;
+  cursor: pointer;
 }
 
-html body .container .log-menu ul li a {
+html body .container .log-menu ul li p {
+  margin: 0;
   color: #2e2e2e;
   text-decoration: none;
 }
@@ -186,12 +194,19 @@ html body .container .log-menu ul li #diff {
   color: red;
 }
 
+html body .container .log-menu ul li:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background-color: #e4e4e4;
+}
+
 html body .container .visible {
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  height: 100px;
-  -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3);
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.3));
 }
 
 html body .container .top {
@@ -204,9 +219,9 @@ html body .container .top {
 }
 
 html body .container .top .left {
-  border-radius: 3px;
-  -webkit-box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  -webkit-filter: drop-shadow(0 6px 1px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 6px 1px rgba(0, 0, 0, 0.15));
 }
 
 html body .container .top .links a {
@@ -596,7 +611,7 @@ html body .container .content .page .section .cnt .stat p {
   color: #2e2e2e;
 }
 
-html body .container .content .page .section #park_top {
+html body .container .content .page .section .outer-cnt #park_top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -604,19 +619,19 @@ html body .container .content .page .section #park_top {
   margin: auto;
 }
 
-html body .container .content .page .section #park_top div {
+html body .container .content .page .section .outer-cnt #park_top div {
   margin: auto;
 }
 
-html body .container .content .page .section #park_top div:first-child {
+html body .container .content .page .section .outer-cnt #park_top div:first-child {
   margin-left: auto;
 }
 
-html body .container .content .page .section #park_top div:last-child {
+html body .container .content .page .section .outer-cnt #park_top div:last-child {
   margin-right: auto;
 }
 
-html body .container .content .page .section .stats {
+html body .container .content .page .section .outer-cnt .stats {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -624,8 +639,8 @@ html body .container .content .page .section .stats {
   margin: auto;
 }
 
-html body .container .content .page .section .stats #stat1,
-html body .container .content .page .section .stats #stat2 {
+html body .container .content .page .section .outer-cnt .stats #stat1,
+html body .container .content .page .section .outer-cnt .stats #stat2 {
   margin-top: 2em;
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -639,8 +654,8 @@ html body .container .content .page .section .stats #stat2 {
           flex-direction: column;
 }
 
-html body .container .content .page .section .stats #stat1 p,
-html body .container .content .page .section .stats #stat2 p {
+html body .container .content .page .section .outer-cnt .stats #stat1 p,
+html body .container .content .page .section .outer-cnt .stats #stat2 p {
   margin: 1em auto;
   font-family: "Poppins";
 }
@@ -833,6 +848,84 @@ html body .container .footer .bottom-section p {
   100% {
     -webkit-box-shadow: 0 0 24px 1px rgba(255, 255, 255, 0);
             box-shadow: 0 0 24px 1px rgba(255, 255, 255, 0);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  html body .container .content .page .section .outer-cnt {
+    width: 50%;
+    margin: 0 auto;
+  }
+  html body .container .content .page .section .outer-cnt #park_top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  html body .container .content .page .section .outer-cnt .stats {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  html body .container .content .page .section .outer-cnt .stats #stat1, html body .container .content .page .section .outer-cnt .stats #stat2 {
+    margin-top: 0;
+  }
+  html body .container .content .page .section .outer-cnt .stats p, html body .container .content .page .section .outer-cnt .stats h3 {
+    text-align: center;
+    margin: auto;
+  }
+  html body .container .content .page .section .outer-cnt {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  html body .container .content .page .section .cnt {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  html body .container .content .page .section .cnt .usr img {
+    padding: 0.55em 0;
+    width: 35px;
+    height: 35px;
+  }
+  html body .container .content .page .section .cnt .info {
+    padding: 1em 0;
+  }
+  html body .container .content .page .section .cnt .info p {
+    width: 60%;
+    text-align: center;
+  }
+  html body .container .content .page .section .cnt .wallpaper {
+    padding: 1em 0 3em 0;
+  }
+  html body .container .content .page .section .cnt .wallpaper img {
+    width: 250px;
+  }
+  html body .container .content .page .section .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  html body .container .content .page .section .row .stat {
+    margin: 0.25em 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  html body .container .content .page .section .row .stat h3, html body .container .content .page .section .row .stat p {
+    margin: auto;
   }
 }
 /*# sourceMappingURL=home.css.map */

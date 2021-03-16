@@ -26,6 +26,7 @@ function parkourTop() {
 
     for (let i = 0; i < scores.length; i++) {
       let row = document.createElement("div");
+      row.className = "usr";
 
       let skull = document.createElement("img");
       skull.src = `https://minotar.net/helm/${scores[i].nick}/50.png`;
