@@ -3,6 +3,7 @@ const MongoStore = require('connect-mongo');
 const session = require("express-session");
 const express = require("express");
 const path = require("path");
+const ejs = require("ejs");
 
 module.exports = (app) => {
  
