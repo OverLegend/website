@@ -1,6 +1,9 @@
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
+
+  require("../../utils/refreshUserObject")(req);
+
   let dataToCarry = {};
   let isLogged = false;
   if (req.isAuthenticated()) {

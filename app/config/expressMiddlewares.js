@@ -14,7 +14,7 @@ module.exports = (app) => {
     resave: false,
     saveUninitialized: false,
     cookie: {
-      maxAge: 60000 * 60 * 24 * 7
+      maxAge: 60000 * 60 * 24 * 30
     },
     store: MongoStore.create({
       mongoUrl: `${process.env.mongoURL}/sessions`

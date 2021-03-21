@@ -14,6 +14,16 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  accessToken: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  refreshToken: {
+    type: String,
+    required: true,
+    unique: true
+  }
 });
 
 module.exports = mongoose.model("User", UserSchema);

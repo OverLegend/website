@@ -2,6 +2,8 @@ const router = require("express").Router();
 
 router.get("/", (req, res) => {
 
+  require("../../utils/refreshUserObject")(req);
+
   let enabledCodes = [404, 401, 502]
   
   if (enabledCodes.includes(req.statusCode)) {

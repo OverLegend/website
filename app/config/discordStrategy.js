@@ -18,18 +18,25 @@ passport.use(new discordStrategy({
 }, async (access, refresh, profile, done) => {
   const {id, username, discriminator, avatar} = profile;
 
+  console.log("called0");
   try {
+    console.log("called1");
     const findUser = await User.findOneAndUpdate({ discordId: id }, {
       discordTag: `${username}#${discriminator}`,
-      avatar
+      avatar,
+      accessToken: access,
+      refreshToken: refresh
     }, {new: true});
 
     if (findUser) return done(null, findUser); 
     else {
+      console.log("called2");
       const newUser = await User.create({
         discordId: id,
         discordTag: `${username}#${discriminator}`,
-        avatar
+        avatar,
+        accessToken: access,
+        refreshToken: refresh
       });
       return done(null, newUser);
     }

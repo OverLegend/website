@@ -4,6 +4,7 @@ const express = require("express");
 const passport = require("passport");
 const mongoose = require("mongoose");
 const app = express();
+const fetch = require("node-fetch");
 
 const conn = require("./config/mysqlConnector");
 
@@ -18,6 +19,11 @@ const routes = ["home", "modalita", "punizioni/*", "regole", "staff", "error"];
 
 routes.forEach(route => {
   app.use(`/${route}`, require(`./utils/routes/${route.includes("/") ? route.split("/")[0] : route}`));
+});
+
+app.post("/api/minecraft/ping", (req, res) => {
+  console.log("ping");
+  res.statusCode = 200;
 });
 
 app.get("/*", (req, res) => { res.statusCode = 404; res.redirect("/error") });
