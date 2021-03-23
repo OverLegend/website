@@ -1,5 +1,5 @@
 module.exports = (mongoose) => {
-  mongoose.connect(`${process.env.mongoURL}/users`, { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
+  mongoose.connect(`${process.env.mongoURL}/sessions`, { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
     if (err) throw err;
     console.log("[MONGOOSE] connected!");
   });
