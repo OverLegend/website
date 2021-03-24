@@ -15,7 +15,7 @@ require("./config/expressMiddlewares")(app);
 require("./utils/routesAliases")(app);
 require("./utils/authEndpoints")(app);
 
-const routes = ["home", "modalita", "punizioni/*", "regole", "staff", "error"];
+const routes = ["home", "modalita", "punizioni/*", "regole", "staff", "error", "profilo"];
 
 routes.forEach(route => {
   app.use(`/${route}`, require(`./utils/routes/${route.includes("/") ? route.split("/")[0] : route}`));

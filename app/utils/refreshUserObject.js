@@ -1,4 +1,5 @@
-const User = require("../utils/User");
+const User = require("../utils/models/User");
+const Minecraft = require("../utils/models/Minecraft");
 const fetch = require("node-fetch");
 
 module.exports = async (req) => {
@@ -15,6 +16,12 @@ module.exports = async (req) => {
             discordTag: `${newUserObj.username}#${newUserObj.discriminator}`,
             avatar: newUserObj.avatar
         }, {new: true});
+
+        const mc = await Minecraft.findOne({discordId: newUserObj.id});
+
+        if (mc && mc.isJoined) {
+          newUser.nickname = mc.nickname;
+        }
 
         newUser.save((err) => {
             if (err) throw err;

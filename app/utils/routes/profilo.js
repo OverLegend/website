@@ -4,20 +4,20 @@ router.get("/", (req, res) => {
 
   require("../../utils/refreshUserObject")(req);
 
-  let dataToCarry = {};
-  let isLogged = false;
   if (req.isAuthenticated()) {
-    isLogged = true;
     let { discordId, discordTag, avatar, nickname} = req.user;
     dataToCarry = {
       discordId: discordId,
       discordTag: discordTag,
       avatar: avatar,
-      minecraft: nickname
+      minecraft: nickname,
+      isLogged: true
     }
+
+    res.render("profilo", dataToCarry);
+  } else {
+    res.redirect("/login");
   }
-  dataToCarry.isLogged = isLogged;
-  res.render("regole", dataToCarry);
 });
 
 module.exports = router;

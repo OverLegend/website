@@ -22,7 +22,9 @@
 <% if(locals.isLogged) { %>
 <div class="log-menu">
   <ul>
+    <% if(locals.nickname != undefined && locals.nickname != null) { %>
     <li onclick="redirectUrl('/profilo');"><p>Profilo</p></li>
+    <% } %>
     <li onclick="redirectUrl('https://store.overlegend.it');"><p>Store</p></li>
     <li onclick="redirectUrl('/logout');"><p id="diff">Logout</p></li>
   </ul>

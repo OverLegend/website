@@ -1,0 +1,19 @@
+$background: #f6df99;
+
+html {
+  scroll-behavior: smooth;
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: whitesmoke;
+    position: relative;
+    .container {
+      width: 100%;
+      @import "../../components/navbar";
+      @import "../../components/_floatingDiscord.scss";
+      @import "../../components/footer";
+    }
+  }
+}
