@@ -1,4 +1,18 @@
+const Minecraft = require("../utils/models/Minecraft");
+
 module.exports = (app, conn) => {
+
+  app.post("/api/minecraft/players", async (req, res) => {
+    if (req.body.isOnline) {
+      let request = await Minecraft.findOne({nickname: req.body.playerName});
+
+      if (!request.isJoined) {
+        request.update({isJoined: true}, {new: true});
+        await request.save();
+      }
+    }
+  });
+
   app.get("/api/top_parkour", (req,res) => {
     conn.query("USE ajparkour; SELECT * FROM ajparkour_scores;", [1,2], (err,data) => {
       if (err) throw err;

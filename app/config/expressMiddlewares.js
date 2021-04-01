@@ -3,12 +3,14 @@ const MongoStore = require('connect-mongo');
 const session = require("express-session");
 const express = require("express");
 const path = require("path");
+const bodyParser = require("body-parser");
 const ejs = require("ejs");
 
 module.exports = (app) => {
  
   app.set("view engine", "ejs");
 
+  app.use(bodyParser());
   app.use(session({
     secret: process.env.secret,
     resave: false,
