@@ -5,6 +5,7 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+const cors = require("cors");
 
 module.exports = (app) => {
  
@@ -22,6 +23,9 @@ module.exports = (app) => {
       mongoUrl: `${process.env.mongoURL}/sessions`
     })
   }));
+
+  app.use(cors());
+  app.options('*', cors());
 
   app.use(passport.initialize());
   app.use(passport.session());
