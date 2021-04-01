@@ -3,10 +3,12 @@ const Minecraft = require("../utils/models/Minecraft");
 module.exports = (app, conn) => {
 
   app.post("/api/minecraft/players", async (req, res) => {
+    console.log("A");
     if (req.body.isOnline) {
       let request = await Minecraft.findOne({nickname: req.body.playerName});
-
+      console.log("B");
       if (!request.isJoined) {
+        console.log("C");
         request.update({isJoined: true}, {new: true});
         await request.save();
       }
