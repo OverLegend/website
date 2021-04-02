@@ -1,10 +1,8 @@
 require("dotenv").config();
 
 const express = require("express");
-const passport = require("passport");
 const mongoose = require("mongoose");
 const app = express();
-const fetch = require("node-fetch");
 
 const conn = require("./config/mysqlConnector");
 
