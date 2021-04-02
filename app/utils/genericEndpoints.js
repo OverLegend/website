@@ -15,7 +15,7 @@ module.exports = (app, conn) => {
       }
     }
 
-    res.statusCode = 200;
+    res.end();
   });
 
   app.get("/api/top_parkour", (req,res) => {
