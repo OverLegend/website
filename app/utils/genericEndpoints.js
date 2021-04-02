@@ -1,8 +1,9 @@
 const Minecraft = require("../utils/models/Minecraft");
+const cors = require("cors");
 
 module.exports = (app, conn) => {
 
-  app.post("/api/minecraft/players", async (req, res) => {
+  app.post("/api/minecraft/players", cors(), async (req, res) => {
     console.log("A");
     if (req.body.isOnline) {
       let request = await Minecraft.findOne({nickname: req.body.playerName});
@@ -13,6 +14,8 @@ module.exports = (app, conn) => {
         await request.save();
       }
     }
+
+    res.statusCode = 200;
   });
 
   app.get("/api/top_parkour", (req,res) => {
