@@ -7,8 +7,8 @@ module.exports = (app, conn) => {
     if (req.body.isOnline) {
       let request = await Minecraft.findOne({nickname: req.body.playerName});
       if (request != null && !request.isJoined) {
-        request.update({isJoined: true}, {new: true});
-        await request.save();
+        let saveSession = await Minecraft.findOneAndUpdate({nickname: req.body.playerName}, {isJoined: true}, {new: true});
+        saveSession.save();
       }
     }
 
