@@ -4,12 +4,9 @@ const cors = require("cors");
 module.exports = (app, conn) => {
 
   app.post("/api/minecraft/players", cors(), async (req, res) => {
-    console.log("A");
     if (req.body.isOnline) {
       let request = await Minecraft.findOne({nickname: req.body.playerName});
-      console.log("B");
-      if (!request.isJoined) {
-        console.log("C");
+      if (request != null && !request.isJoined) {
         request.update({isJoined: true}, {new: true});
         await request.save();
       }
