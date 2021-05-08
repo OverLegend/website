@@ -56,7 +56,7 @@
           transition: 0.1s;
           position: relative;
 
-          &:hover {
+          &:hover:not(.iubenda-black) {
             transition: 0.1s;
             color: #2e2e2e;
           }
@@ -72,7 +72,7 @@
             transition: 0.1s;
           }
 
-          &:hover::before {
+          &:hover::before:not(.iubenda-black) {
             transition: 0.1s;
             top: 94%;
             opacity: 1;

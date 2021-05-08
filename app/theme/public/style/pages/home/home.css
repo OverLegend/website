@@ -770,7 +770,7 @@ html body .container .footer .top-section .col .content a {
   position: relative;
 }
 
-html body .container .footer .top-section .col .content a:hover {
+html body .container .footer .top-section .col .content a:hover:not(.iubenda-black) {
   -webkit-transition: 0.1s;
   transition: 0.1s;
   color: #2e2e2e;
@@ -788,7 +788,7 @@ html body .container .footer .top-section .col .content a::before {
   transition: 0.1s;
 }
 
-html body .container .footer .top-section .col .content a:hover::before {
+html body .container .footer .top-section .col .content a:hover::before:not(.iubenda-black) {
   -webkit-transition: 0.1s;
   transition: 0.1s;
   top: 94%;
