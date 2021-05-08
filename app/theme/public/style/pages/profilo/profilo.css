@@ -408,7 +408,7 @@ html body .container .footer .top-section .col .content a:hover:not(.iubenda-bla
   color: #2e2e2e;
 }
 
-html body .container .footer .top-section .col .content a::before {
+html body .container .footer .top-section .col .content a::before:not(.iubenda-black) {
   content: "";
   position: absolute;
   width: 100%;

@@ -61,7 +61,7 @@
             color: #2e2e2e;
           }
 
-          &::before {
+          &::before:not(.iubenda-black) {
             content: "";
             position: absolute;
             width: 100%;
