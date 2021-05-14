@@ -13,13 +13,19 @@ require("./utils/routesAliases")(app);
 require("./utils/authEndpoints")(app);
 require("./utils/genericEndpoints")(app, conn);
 
-const routes = ["home", "modalita", "punizioni/*", "regole", "staff", "error", "profilo"];
+const routes = ["home", "modalita", "punizioni/*", "regole", "staff", "error", "profilo", "wiki"];
 
-routes.forEach(route => {
-  app.use(`/${route}`, require(`./utils/routes/${route.includes("/") ? route.split("/")[0] : route}`));
+routes.forEach((route) => {
+  app.use(
+    `/${route}`,
+    require(`./utils/routes/${route.includes("/") ? route.split("/")[0] : route}`)
+  );
 });
 
-app.get("/*", (req, res) => { res.statusCode = 404; res.redirect("/error") });
+app.get("/*", (req, res) => {
+  res.statusCode = 404;
+  res.redirect("/error");
+});
 
 app.listen(5000, () => {
   console.clear();

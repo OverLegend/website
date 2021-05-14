@@ -26,12 +26,14 @@ module.exports = async (req) => {
       newUser.nickname = mc.nickname;
     }
 
-    newUser.save((err) => {
-      if (err) throw err;
-
-      req.login(newUser, (err) => {
+    if (newUser) {
+      newUser.save((err) => {
         if (err) throw err;
+
+        req.login(newUser, (err) => {
+          if (err) throw err;
+        });
       });
-    });
+    }
   }
 };

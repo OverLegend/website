@@ -7,9 +7,7 @@
     <div class="container">
       <%- include("partials/navbar"); %> <%- include("partials/discordFloating"); %>
 
-      <div class="page">
-        <% if (page == "skyblock") { %> <%- include("partials/wiki/skyblock"); %> <% } %>
-      </div>
+      <div class="page"><%- include("partials/wiki/" + page); %> <% } %></div>
 
       <%- include("partials/footer"); %>
     </div>
