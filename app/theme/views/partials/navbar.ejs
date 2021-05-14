@@ -1,6 +1,6 @@
 <div class="navbar top">
   <div class="logo">
-    <img src="/img/favicon.svg" alt="favicon.svg">
+    <img src="/img/favicon.svg" alt="favicon.svg" />
   </div>
   <div class="links">
     <a href="/home">Home</a>
@@ -8,11 +8,15 @@
     <a href="/regole">Regolamento</a>
     <a href="/staff">Staff</a>
     <a href="/punizioni/bans">Punizioni</a>
+    <a href="https://store.overlegend.it/" target="_blank">Store</a>
   </div>
   <div class="left" id="nav-left-content">
     <p>mc.overlegend.it</p>
     <% if(locals.isLogged) { %>
-    <img onclick="toggleMenu();" src="https://cdn.discordapp.com/avatars/<%= locals.discordId %>/<%= locals.avatar %>.png?size=128">
+    <img
+      onclick="toggleMenu();"
+      src="https://cdn.discordapp.com/avatars/<%= locals.discordId %>/<%= locals.avatar %>.png?size=128"
+    />
     <% } else { %>
     <a href="/login">ACCEDI</a>
     <% } %>
