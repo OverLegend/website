@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-router.get("/wiki/skyblock", (req, res) => {
+router.get("/skyblock", (req, res) => {
   require("../../utils/refreshUserObject")(req);
 
   let dataToCarry = {};
