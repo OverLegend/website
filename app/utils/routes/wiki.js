@@ -33,7 +33,7 @@ router.get("/:page", (req, res) => {
       discordTag: discordTag,
       avatar: avatar,
       minecraft: nickname,
-      page: req.params.page,
+      page: "partials/wiki/" + req.params.page,
     };
   }
   dataToCarry.isLogged = isLogged;
