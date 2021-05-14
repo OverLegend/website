@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <%- include("partials/head", {displayName: "Staff", id: "staff"}); %>
+  </head>
+  <body onscroll="checkScroll(-1);">
+    <div class="container">
+      <%- include("partials/navbar"); %> <%- include("partials/discordFloating"); %>
+
+      <div class="page">
+        <% if (page == "skyblock") { %> <%- include("partials/wiki/skyblock"); %> <% } %>
+      </div>
+
+      <%- include("partials/footer"); %>
+    </div>
+
+    <script src="/script/utils.js"></script>
+    <script src="/script/getStaff.js"></script>
+
+    <script>
+      (function () {
+        goTop();
+        document.body.addEventListener("scroll", checkScroll(-1));
+        document.querySelector(".navbar").classList.toggle("top");
+        getStaff();
+      })();
+
+      checkScroll(-1);
+
+      function showDs() {
+        document.querySelector(".floating-ds").classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>
