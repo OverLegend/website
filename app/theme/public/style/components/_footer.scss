@@ -100,3 +100,34 @@
     }
   }
 }
+
+@media only screen and (max-width: 1100px) {
+  .footer .top-section {
+    width: 700px !important;
+    padding-left: 1em !important;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .footer .top-section {
+    max-width: 500px;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    .logo {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .footer .top-section {
+    max-width: 300px;
+
+    .col {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}

@@ -303,7 +303,6 @@ html {
 }
 
 @media only screen and (max-width: 1200px) {
-
   html body .container .content .page .section .outer-cnt {
     width: 50%;
     margin: 0 auto;
@@ -311,9 +310,13 @@ html {
       flex-direction: column;
     }
     .stats {
-      #stat1, #stat2 {margin-top: 0;}
+      #stat1,
+      #stat2 {
+        margin-top: 0;
+      }
       flex-direction: column;
-      p, h3 {
+      p,
+      h3 {
         text-align: center;
         margin: auto;
       }
@@ -355,10 +358,18 @@ html {
         margin: 0.25em 0;
         display: flex;
         flex-direction: row-reverse;
-        h3, p {
+        h3,
+        p {
           margin: auto;
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  html body .container .content .firstContent .lore h2 {
+    max-width: 80%;
+    text-align: center;
   }
 }

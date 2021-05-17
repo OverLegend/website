@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="it">
   <head>
-    <%- include("partials/head", {displayName: "Staff", id: "staff"}); %>
+    <%- include("partials/head", {displayName: `${page[0].toUpperCase() + page.substr(1)} wiki`, id:
+    "wiki"}); %>
   </head>
   <body onscroll="checkScroll(-1);">
     <div class="container">

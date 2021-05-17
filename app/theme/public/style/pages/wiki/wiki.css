@@ -586,4 +586,80 @@ html body .container .footer .bottom-section p {
     display: none;
   }
 }
-/*# sourceMappingURL=profilo.css.map */
+
+html body .container .apply {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  background: #2e2e2e;
+  padding: 0.4em 0.8em;
+  cursor: pointer;
+  border-radius: 35px;
+  z-index: 90;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+html body .container .apply:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  opacity: 0.8;
+}
+
+html body .container .apply p {
+  color: white;
+  font-family: "Poppins";
+  font-weight: bold;
+  font-size: 18px;
+  margin: auto;
+}
+
+html body .container .page {
+  background: #f6df99;
+  z-index: 50;
+  height: auto;
+  min-height: 80vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+html body .container .page .section {
+  margin: auto;
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  padding: 3em 0 4em 0;
+  z-index: 30;
+  background-color: white;
+  -webkit-box-shadow: 0 0 8px 1px rgba(10, 10, 10, 0.2);
+          box-shadow: 0 0 8px 1px rgba(10, 10, 10, 0.2);
+}
+
+html body .container .page .divider {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  background: #f6df99;
+  z-index: 29;
+}
+
+html body .container .page .divider:first-child {
+  height: 20vh;
+}
+/*# sourceMappingURL=wiki.css.map */
