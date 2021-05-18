@@ -321,3 +321,9 @@ html {
     font-size: 14px;
   }
 }
+
+@media only screen and (max-width: 560px) {
+  html body .container .page .section .description h3 {
+    font-size: 18px;
+  }
+}

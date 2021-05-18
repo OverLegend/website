@@ -823,7 +823,7 @@ html body .container .page .divider:first-child {
 
 @media only screen and (max-width: 850px) {
   html body .container .page .section .content {
-    width: 300px;
+    width: clamp(300px, 500px, 750px);
   }
   html body .container .page .section .content .mod .image {
     width: 100%;
@@ -833,6 +833,12 @@ html body .container .page .divider:first-child {
   }
   html body .container .page .section .content .mod .lore #lore {
     max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  html body .container .page .section .description h3 {
+    font-size: 18px;
   }
 }
 /*# sourceMappingURL=modalita.css.map */
