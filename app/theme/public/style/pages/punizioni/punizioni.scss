@@ -177,8 +177,15 @@ html {
                   width: 20%;
                   border-bottom: 1px solid #2e2e2e;
                   display: flex;
-
                   flex-direction: column-reverse;
+
+                  &:nth-child(3) {
+                    white-space: nowrap;
+                    overflow: auto;
+                    text-overflow: ellipsis;
+                    padding-bottom: 15px;
+                  }
+
                   p {
                     max-width: 90%;
                     margin: auto;
@@ -274,5 +281,17 @@ html {
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  html body .container .page .section .content {
+    width: 95%;
+  }
+  html body .container .page .section .content table tr td p {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

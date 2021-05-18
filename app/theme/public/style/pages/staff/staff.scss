@@ -175,3 +175,24 @@ html {
     }
   }
 }
+
+@media only screen and (max-width: 750px) {
+  html body .container .page .section .description p {
+    font-size: 500px;
+  }
+
+  html body .container .page .section .content .staff-row .cells .wrapper div img {
+    width: 75px;
+  }
+
+  html body .container .page .section .content .staff-row .cells .wrapper {
+    padding: 2em;
+    div {
+      padding: 2.5em 2em;
+    }
+  }
+
+  html body .container .page .section .content .staff-row .title p {
+    max-width: 500px;
+  }
+}
