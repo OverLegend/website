@@ -825,6 +825,9 @@ html body .container .page .divider:first-child {
   html body .container .page .section .content {
     width: 300px;
   }
+  html body .container .page .section .content .mod .image {
+    width: 100%;
+  }
   html body .container .page .section .content .mod .lore {
     width: 100%;
   }

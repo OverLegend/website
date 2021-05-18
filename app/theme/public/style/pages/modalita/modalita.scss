@@ -196,10 +196,15 @@ html {
 @media only screen and (max-width: 850px) {
   html body .container .page .section .content {
     width: 300px;
-    .mod .lore {
-      width: 100%;
-      #lore {
-        max-width: 100%;
+    .mod {
+      .image {
+        width: 100%;
+      }
+      .lore {
+        width: 100%;
+        #lore {
+          max-width: 100%;
+        }
       }
     }
   }
