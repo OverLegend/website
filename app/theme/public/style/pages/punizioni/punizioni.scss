@@ -283,15 +283,3 @@ html {
     }
   }
 }
-
-@media only screen and (max-width: 1200px) {
-  html body .container .page .section .content {
-    width: 95%;
-  }
-  html body .container .page .section .content table tr td p {
-    width: 250px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
