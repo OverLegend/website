@@ -926,4 +926,10 @@ html body .container .page .divider {
 html body .container .page .divider:first-child {
   height: 20vh;
 }
+
+@media only screen and (max-width: 850px) {
+  html body .container .page .section .content {
+    width: 95%;
+  }
+}
 /*# sourceMappingURL=punizioni.css.map */

@@ -283,3 +283,9 @@ html {
     }
   }
 }
+
+@media only screen and (max-width: 850px) {
+  html body .container .page .section .content {
+    width: 95%;
+  }
+}
