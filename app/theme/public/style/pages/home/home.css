@@ -1086,7 +1086,7 @@ html body .container .footer .bottom-section p {
     max-width: clamp(200px, 500px, 750px);
   }
   html body .container .content .page .section .outer-cnt {
-    max-width: 85%;
+    width: 95%;
   }
 }
 /*# sourceMappingURL=home.css.map */
