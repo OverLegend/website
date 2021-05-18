@@ -1079,8 +1079,14 @@ html body .container .footer .bottom-section p {
   }
   html body .container .content .page .section .cnt .info p {
     width: 95%;
-    max-width: 95;
+    max-width: 95%;
     font-size: 14px;
+  }
+  html body .container .content .page .section .description p {
+    max-width: clamp(200px, 500px, 750px);
+  }
+  html body .container .content .page .section .outer-cnt {
+    max-width: 85%;
   }
 }
 /*# sourceMappingURL=home.css.map */
