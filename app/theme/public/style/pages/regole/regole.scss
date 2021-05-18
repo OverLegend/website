@@ -180,7 +180,7 @@ html {
                   font-family: "Poppins";
                   position: relative;
                   padding: 1em 25px 0.2em 25px;
-    	margin: auto auto auto 0;
+                  margin: auto auto auto 0;
                 }
 
                 #tw {
@@ -235,5 +235,55 @@ html {
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  html body .container .page .section .content .index .links {
+    width: 450px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  html body .container .page .section .content .rules .rule {
+    #on,
+    #tw {
+      max-width: 450px;
+    }
+    ul li {
+      max-width: 500px;
+    }
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  html body .container .page .section .content .index .links {
+    width: 300px;
+    .link button {
+      font-size: 14px;
+    }
+  }
+
+  html body .container .page .section .content .rules .rule {
+    #on,
+    #tw {
+      font-size: 11px;
+      max-width: 350px;
+    }
+    ul li {
+      font-size: 12px;
+      max-width: 350px;
+    }
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  html body .container .page .section .description h3 {
+    font-size: 18px;
+  }
+
+  html body .container .page .section .description p {
+    max-width: 400px;
+    font-size: 14px;
   }
 }

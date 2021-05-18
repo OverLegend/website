@@ -156,3 +156,51 @@ html {
     }
   }
 }
+
+@media only screen and (max-width: 850px) {
+  html body .container .page .section .content {
+    width: 500px;
+    .mod {
+      flex-direction: column;
+      height: auto;
+      margin: 4em auto;
+
+      .lore {
+        margin: 0 auto;
+        width: 75%;
+        h4 {
+          margin: 0 auto;
+          text-align: center;
+        }
+        #version {
+          margin: 0 auto;
+          text-align: center;
+        }
+        #lore {
+          margin: 0.5em auto;
+          text-align: center;
+        }
+      }
+      .image {
+        margin: 1em auto;
+        img {
+          margin: 0 auto;
+          padding: 0;
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  html body .container .page .section .content {
+    width: 300px;
+    .mod .lore {
+      width: 100%;
+      #lore {
+        max-width: 100%;
+      }
+    }
+  }
+}
