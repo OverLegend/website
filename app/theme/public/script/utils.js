@@ -56,7 +56,7 @@ function countPlayers(a, b, c) {
       }
     });
 
-  document.querySelector(c).innerText = "1450+";
+  document.querySelector(c).innerText = "2100+";
 }
 
 function toggleMenu() {

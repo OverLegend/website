@@ -373,3 +373,14 @@ html {
     text-align: center;
   }
 }
+
+@media only screen and (max-width: 650px) {
+  html body .container .content .page .section .row {
+    width: 95%;
+  }
+
+  html body .container .content .page .section .cnt .info p {
+    width: 95%;
+    font-size: 14px;
+  }
+}
