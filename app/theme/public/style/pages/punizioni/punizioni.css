@@ -932,4 +932,30 @@ html body .container .page .divider:first-child {
     width: 95%;
   }
 }
+
+@media only screen and (max-width: 650px) {
+  html body .container .page .section .content .controls button {
+    font-size: 14px;
+  }
+  html body .container .page .section .content table tr th {
+    font-size: 12px;
+  }
+  html body .container .page .section .content table tr td p {
+    font-size: 12px;
+  }
+  html body .container .page .section .content table tr .wimg img {
+    width: 14px;
+    height: 14px;
+  }
+  html body .container .page .section .content table tr td .bar {
+    height: 5px;
+    border-radius: 0px;
+  }
+  html body .container .page .section .content .select button {
+    font-size: 14px;
+  }
+  html body .container .page .section .description p {
+    font-size: 14px;
+  }
+}
 /*# sourceMappingURL=punizioni.css.map */
