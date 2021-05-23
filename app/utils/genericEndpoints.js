@@ -8,15 +8,10 @@ module.exports = (app, conn) => {
   });
 
   app.post("/api/minecraft/players", cors(), async (req, res) => {
-    if (req.body.isOnline) {
-      let request = await Minecraft.findOne({ "minecraft.nickname": req.body.playerName });
+    if (req.body.type == "join") {
+      let request = await Minecraft.findOne({ "minecraft.nickname": req.body.player - name });
       if (request != null && !request.isJoined) {
-        let saveSession = await Minecraft.findOneAndUpdate(
-          { "minecraft.nickname": req.body.playerName },
-          { isJoined: true },
-          { new: true }
-        );
-        saveSession.save();
+        await Minecraft.findOneAndUpdate({ "minecraft.nickname": req.body.player - name }, { isJoined: true }, { new: true });
       }
     }
 
