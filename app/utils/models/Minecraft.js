@@ -1,25 +1,26 @@
 const mongoose = require("mongoose");
 
-const RequestSchema = new mongoose.Schema({
-  discordId: {
-    type: String,
-    required: true,
-    unique: true
+const RequestSchema = new mongoose.Schema(
+  {
+    discordId: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    requestExpireDate: {
+      type: String,
+      required: true,
+    },
+    isJoined: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    minecraft: {
+      type: Object,
+    },
   },
-  requestExpireDate: {
-    type: String,
-    required: true
-  },
-  nickname: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  isJoined: {
-    type: Boolean,
-    required: true,
-    default: false
-  }
-}, {collection: "discordrequests"});
+  { collection: "discordrequests" }
+);
 
 module.exports = mongoose.model("Requests", RequestSchema);
