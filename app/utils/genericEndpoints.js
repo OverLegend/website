@@ -9,9 +9,9 @@ module.exports = (app, conn) => {
 
   app.post("/api/minecraft/players", cors(), async (req, res) => {
     if (req.body.type == "join") {
-      let request = await Minecraft.findOne({ "minecraft.nickname": req.body.player - name });
+      let request = await Minecraft.findOne({ "minecraft.nickname": req.body["player-name"] });
       if (request != null && !request.isJoined) {
-        await Minecraft.findOneAndUpdate({ "minecraft.nickname": req.body.player - name }, { isJoined: true }, { new: true });
+        await Minecraft.findOneAndUpdate({ "minecraft.nickname": req.body["player-name"] }, { isJoined: true }, { new: true });
       }
     }
 
